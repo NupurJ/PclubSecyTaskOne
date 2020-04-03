@@ -11,3 +11,7 @@ Run script.sh to print list of non-official names and get a .csv file of the for
 <code>./script.sh</code>  
 Output: final.csv.  
 script.sh uses the out.csv file obtained in the last part and the students.json (same as the file included in the mail) to produce its output
+
+Very minor edit made at 1305: replace line 58 of script.sh with the following:  
+<code>grep "$name" $beautjson | sed -n "s/^.*\"d\":\"\([A-Z a-z.]*\)\".*\"i\":\"\([0-9]*\)\",\"n\":\"$name\",.*/\2,\1,/p" >$tmp2</code>
+
